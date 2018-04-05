@@ -1,5 +1,37 @@
 #!/bin/bash
+if [ $1 = "-help" ]; 
+then 
 
+echo " =========================================================================================="
+
+
+
+echo "            Name & description: initdev ; proceed with a project organization and apply a set of pre-  configuration; a project initialization tool  "
+
+
+echo " =========================================================================================="
+
+
+echo "           Syntax: Project_name Project_type License_type git"
+
+
+
+echo " =========================================================================================="
+
+
+
+echo "          Args: it has 4 arguments: Project name, project type (c,py,cpp,latex,BEAMER) , license type (GPL, MIT) and initialization of a deposit git "
+
+echo " =========================================================================================="
+
+
+
+echo "         Author: BELMOKHTAR Maria ; mariarah@outlook..fr"
+
+
+
+echo " ==========================================================================================" 
+else 
 mkdir bin
 mkdir sources
 mkdir gitignores 
@@ -163,6 +195,6 @@ cp /home/maria/initdev_cc/initdev /home/maria/initdev_cc/main.sh
 
 
 
-
+fi
 
 
