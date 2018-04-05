@@ -1,7 +1,7 @@
 # initdev_cc
 
 1st project module: Outils de programmation ( programming tools) ; L3 Operational Research RO
-This project consists of creating an application that creates a new project with the pre-configurations, it must start with at least one parameter ...
+**This project consists of creating an application that creates a new project with the pre-configurations, it must start with at least one parameter ...
 I copied :
 -The text file contains the minimum code of the language requested in main. * file in the project directory.
 -The text file contains the terms of the license requested by the user in a LICENSE file in the project directory
