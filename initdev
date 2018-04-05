@@ -1,0 +1,168 @@
+#!/bin/bash
+
+mkdir bin
+mkdir sources
+mkdir gitignores 
+mkdir licences
+mkdir makefiles
+
+if [ -z $1 ];
+then  
+     echo "Expected arguments, please check the help : initdev-help "
+     echo "(Echec : 1)"
+
+elif [ -z $2 ];
+then 
+echo "(Succé : 0)"
+echo " Échec 1 : Unknown arguments, please check the help : initdev-help"
+ mkdir $1
+ cd $1
+ touch main
+ touch LICENSE
+ touch Makefile
+
+else
+mkdir $1
+ cd $1
+touch main
+touch LICENSE
+ touch Makefile
+##############################################################
+
+for i in $2 $3 $4
+do
+if [ $i = "c" ]; 
+then 
+mv main main.c
+cp /home/maria/Desktop/initdev/sources/main.c /home/maria/initdev_cc/$1/main.c
+elif [ $i = "py" ]; 
+then
+mv main main.py
+cp /home/maria/Desktop/initdev/sources/main.py /home/maria/initdev_cc/$1/main.py
+elif [ $i = "latex" ]; 
+then 
+mv main latexMin.tex
+cp /home/maria/Desktop/initdev/sources/latexMin.tex /home/maria/initdev_cc/$1/latexMin.tex
+elif [ $i = "BEAMER" ];
+then mv main beamer.tex 
+cp /home/maria/Desktop/initdev/sources/beamer.tex /home/maria/initdev_cc/$1/beamer.tex
+elif [ $i = "cpp" ];
+then 
+mv main main.cpp
+cp /home/maria/Desktop/initdev/sources/main.cpp /home/maria/initdev_cc/$1/main.cpp
+elif [ $i = "c++" ];
+then 
+mv main main.cpp
+cp /home/maria/Desktop/initdev/sources/main.cpp /home/maria/initdev_cc/$1/main.cpp
+fi
+
+############################################################
+
+for i in $2 $3 $4
+do
+if [ $i = "GPL" ]; 
+then 
+touch main
+cp /home/maria/Desktop/initdev/licenses/GPL /home/maria/initdev_cc/$1/LICENSE
+mv LICENSE GPL
+mv /home/maria/initdev_cc/$1/GPL /home/maria/initdev_cc/licences
+elif [ $i = "MIT" ];
+then 
+touch main
+cp /home/maria/Desktop/initdev/licenses/MIT /home/maria/initdev_cc/$1/LICENSE 
+mv LICENSE MIT
+mv /home/maria/initdev_cc/$1/MIT /home/maria/initdev_cc/licences
+fi
+
+#############################################################
+
+for i in $2 $3 $4
+do
+
+if [ $i = "git" ]; 
+then touch .gitignore 
+fi
+done
+###########################################################
+if [ -e main.c ]; then
+cp /home/maria/Desktop/initdev/gitignores/c /home/maria/initdev_cc/gitignores
+
+elif [ -e main.cpp ]; then
+cp /home/maria/Desktop/initdev/gitignores/cpp /home/maria/initdev_cc/gitignores
+
+elif [ -e main.py ]; then
+cp /home/maria/Desktop/initdev/gitignores/python /home/maria/initdev_cc/gitignores
+
+elif [ -e latexMin.tex ]; then
+cp /home/maria/Desktop/initdev/gitignores/tex /home/maria/initdev_cc/gitignores
+
+elif [ -e beamer.tex ]; then
+cp /home/maria/Desktop/initdev/gitignores/tex /home/maria/initdev_cc/gitignores
+fi
+
+done
+done
+############################################################
+if [ -e main.c ];
+then
+mv /home/maria/initdev_cc/$1/main.c /home/maria/initdev_cc/sources 
+echo "(0: Succés)"
+
+elif [ -e main.py ];
+then
+mv /home/maria/initdev_cc/$1/main.py /home/maria/initdev_cc/sources
+echo "(0: Succés)"
+
+elif [ -e main.cpp ];
+then
+mv /home/maria/initdev_cc/$1/main.cpp /home/maria/initdev_cc/sources
+echo "(0: Succés)"
+
+elif [ -e latexMin.tex ];
+then
+mv /home/maria/initdev_cc/$1/latexMin.tex /home/maria/initdev_cc/sources
+echo "(0: Succés)"
+
+elif [ -e beamer.tex ];
+then
+mv /home/maria/initdev_cc/$1/beamer.tex /home/maria/initdev_cc/sources
+echo "(0: Succés)"
+
+else 
+echo " Échec 1 : Unknown arguments, please check the help : initdev-help"
+fi
+######################################################
+if [ -e main ];
+then 
+echo "(0: Succéss)" 
+else
+echo "Échec 1 : Unknown arguments, please check the help : initdev-help"
+fi
+########################################################
+
+if [ -s gitignores ];
+then  
+echo "Échec 1 : You must set project type, please check the help : initdev-help"
+else
+echo "(0: Succéss!)"
+fi
+
+fi
+######################################################### 
+
+mv /home/maria/initdev_cc/$1/Makefile /home/maria/initdev_cc/makefiles
+
+##########################################################
+
+
+cd /home/maria/initdev_cc
+
+touch main.sh
+
+cp /home/maria/initdev_cc/initdev /home/maria/initdev_cc/main.sh
+
+
+
+
+
+
