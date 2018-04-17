@@ -8,4 +8,4 @@ I copied :
 -The appropriate .gitignore file to the project language in a .gitignore file in the project directory.
 all this from the .rar file that the teacher sent us
 *****************************************NOTE:
-I did this project alone but I needed help and advice from my colleagues (1 or 2 among them), in case of resemblance to one of them. *******
+J'ai demandé des consiels et des suggestions de ma camarde LINDA TOUIL de groupe 1 dans la partie d'installation et dans le début elle ma expliqué le projet a peu prés, idem pour de ma part, mais on a pas fait un travail copie coller *******
